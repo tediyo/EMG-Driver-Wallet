@@ -60,3 +60,10 @@ class WalletControllerTest extends TestCase
                  ->assertJson(['message' => 'Driver not found']);
     }
 }
+
+///////////////////////// SUMMARY OF TEST CREATED /////////////////////////////////
+ // Backend (Laravel):
+// testTopUpSuccess(): Tests successful top-up.
+// testTopUpValidationFailure(): Tests validation errors.
+// testCheckBalanceSuccess(): Tests balance check.
+// testCheckBalanceNotFound(): Tests driver not found scenario.
