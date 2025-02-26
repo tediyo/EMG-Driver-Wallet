@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TopUpForm from './components/TopUpForm';
+import BalanceDisplay from './components/BalanceDisplay';
+import './App.css'; // Create a custom CSS file for styling
 
-function App() {
+const App = () => {
+  const [driverId] = useState(1); // Change this with the driver ID you want to use
+  const [balance, setBalance] = useState(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Driver Wallet System</h1>
+      <TopUpForm driverId={driverId} setBalance={setBalance} />
+      <BalanceDisplay driverId={driverId} />
     </div>
   );
-}
+};
 
 export default App;
