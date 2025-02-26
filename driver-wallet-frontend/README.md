@@ -1,70 +1,222 @@
-# Getting Started with Create React App
+Here's a detailed `README.md` file for the Driver Wallet System project, covering both the backend (Laravel) and frontend (React) parts, including file structures, setup instructions, and other important details.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+# Tewodros Berhanu
+# Software Developer | QA Tester 
+# 0947087598 | tewodrosberhanu19@gmail.com
 
-## Available Scripts
+# Driver Wallet System
 
-In the project directory, you can run:
+This is a full-stack application for a Driver Wallet System, built with **Laravel** for the backend and **React** for the frontend. It includes features for wallet top-up, balance check, and a status check for ride acceptance eligibility.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [File Structure](#file-structure)
+  - [Backend (Laravel)](#backend-laravel)
+  - [Frontend (React)](#frontend-react)
+- [Setup Instructions](#setup-instructions)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+- [API Endpoints](#api-endpoints)
+- [Running Tests](#running-tests)
+- [License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
+- Wallet Top-Up: Drivers can add money to their wallet.
+- Balance Check: Drivers can check their current balance.
+- Ride Acceptance Status: Checks if the balance is sufficient for accepting rides.
+- Responsive UI with a modern design.
+- Integration between frontend and backend using RESTful APIs.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Tech Stack
+### Backend:
+- Laravel 12.0.1 (PHP Framework)
+- MySQL (Database)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend:
+- React.js (Frontend Framework)
+- Axios (For API Requests)
+- Tailwind CSS (For Modern UI Design)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## File Structure
+### Backend (Laravel)
+```
+driver-wallet-backend/
+│
+├── app/
+│   ├── Http/
+│   │   └── Controllers/
+│   │       └── WalletController.php
+│   ├── Models/
+│       └── Wallet.php
+│
+├── config/
+│   └── database.php
+│
+├── database/
+│   ├── migrations/
+│   │   └── 2025_02_25_000000_create_wallets_table.php
+│   └── seeders/
+│       └── WalletSeeder.php
+│
+├── routes/
+│   └── api.php
+│
+└── tests/
+    └── Feature/
+        └── WalletControllerTest.php
+```
 
-### `npm run eject`
+### Frontend (React)
+```
+driver-wallet-frontend/
+│
+├── public/
+│   └── index.html
+│
+├── src/
+│   ├── __tests__/
+│   │   ├── TopUpForm.test.js
+│   │   └── BalanceCheck.test.js
+│   │
+│   ├── components/
+│   │   ├── TopUpForm.js
+│   │   └── BalanceCheck.js
+│   │
+│   ├── App.js
+│   ├── index.js
+│   └── api/
+│       └── walletApi.js
+│
+└── package.json
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setup Instructions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Backend Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone the Repository:**
+```bash
+git clone https://github.com/your-username/driver-wallet-backend.git
+cd driver-wallet-backend
+```
 
-## Learn More
+2. **Install Dependencies:**
+```bash
+composer install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Configure Environment:**
+- Copy `.env.example` to `.env`
+- Update the `.env` file with your database credentials:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=driver_wallet
+DB_USERNAME=your_db_username
+DB_PASSWORD=your_db_password
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Generate Application Key:**
+```bash
+php artisan key:generate
+```
 
-### Code Splitting
+5. **Run Migrations and Seeders:**
+```bash
+php artisan migrate --seed
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+6. **Start the Server:**
+```bash
+php artisan serve
+```
 
-### Analyzing the Bundle Size
+### Frontend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Navigate to Frontend Directory:**
+```bash
+cd ../driver-wallet-frontend
+```
 
-### Making a Progressive Web App
+2. **Install Dependencies:**
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. **Start the Development Server:**
+```bash
+npm start
+```
 
-### Advanced Configuration
+4. The frontend should now be accessible at `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Wallet
+- **Top-Up Wallet**  
+  - Endpoint: `POST /api/wallet/topup`
+  - Request Body:
+    ```json
+    {
+      "driver_id": 1,
+      "amount": 100
+    }
+    ```
+  - Response:
+    ```json
+    {
+      "message": "Top-up successful",
+      "balance": 150
+    }
+    ```
 
-### `npm run build` fails to minify
+- **Check Balance**
+  - Endpoint: `GET /api/wallet/balance/{driver_id}`
+  - Response:
+    ```json
+    {
+      "balance": 150,
+      "status": "Can accept rides"
+    }
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## Running Tests
+
+### Backend (Laravel)
+
+```bash
+php artisan test
+```
+
+### Frontend (React)
+
+```bash
+npm test
+```
+
+- Tests are located in the `__tests__` folder for React components and in the `tests/Feature` folder for Laravel.
+
+---
+
+## License
+This project is licensed under the MIT License.
+
+---
+
