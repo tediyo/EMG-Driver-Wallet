@@ -14,3 +14,5 @@ describe('BalanceCheck Component', () => {
     expect(screen.getByText(/Can accept rides/i)).toBeInTheDocument();
   });
 });
+//////////////////////////////TEST SUMMARY /////////////////////////
+   // alanceCheck.test.js: Tests balance and status display //

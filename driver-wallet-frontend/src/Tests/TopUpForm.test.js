@@ -29,3 +29,5 @@ describe('TopUpForm Component', () => {
     });
   });
 });
+////////////////////////////////////// TEST SUMMARY////////////////////////////
+               //  Tests form rendering and submission//
