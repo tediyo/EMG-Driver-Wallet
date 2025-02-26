@@ -4,7 +4,7 @@ import BalanceDisplay from './components/BalanceDisplay';
 import './App.css'; // Create a custom CSS file for styling
 
 const App = () => {
-  const [driverId] = useState(1); // Change this with the driver ID you want to use
+  const [driverId] = useState(1); //these driver ID is changable , so that you would use your own
   const [balance, setBalance] = useState(null);
 
   return (
