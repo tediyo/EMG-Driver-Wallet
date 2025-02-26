@@ -1,9 +1,10 @@
-Here's a detailed `README.md` file for the Driver Wallet System project, covering both the backend (Laravel) and frontend (React) parts, including file structures, setup instructions, and other important details.
+
 
 ---
-# Tewodros Berhanu
-# Software Developer | QA Tester 
-# 0947087598 | tewodrosberhanu19@gmail.com
+
+# Tewodros Berhanu  
+# Software Developer | QA Tester  
+# 0947087598 | tewodrosberhanu19@gmail.com  
 
 # Driver Wallet System
 
@@ -17,6 +18,7 @@ This is a full-stack application for a Driver Wallet System, built with **Larave
 - [File Structure](#file-structure)
   - [Backend (Laravel)](#backend-laravel)
   - [Frontend (React)](#frontend-react)
+- [Algorithm Challenge](#algorithm-challenge)
 - [Setup Instructions](#setup-instructions)
   - [Backend Setup](#backend-setup)
   - [Frontend Setup](#frontend-setup)
@@ -99,6 +101,53 @@ driver-wallet-frontend/
 │
 └── package.json
 ```
+
+---
+
+## Algorithm Challenge
+
+### **Second Largest Number Algorithm**
+
+This challenge involves writing a function to find the **second largest number** in an array with **O(n) time complexity**.
+
+#### **File Structure for the Algorithm Challenge:**
+```
+driver-wallet-backend/
+│
+├── app/
+│   ├── Services/
+│   │   └── SecondLargestService.php  (Contains the logic for finding the second largest number)
+│
+├── routes/
+│   └── api.php  (Defines the route to call the algorithm)
+```
+
+#### **Instructions to Run the Algorithm Challenge:**
+
+1. **Ensure the Backend Is Set Up:**
+   Follow the steps in the **Backend Setup** section to set up your Laravel environment.
+
+2. **Add the Algorithm Service:**
+   - The algorithm is implemented in `app/Services/SecondLargestService.php`. This service contains the logic for finding the second largest number in an array.
+   
+3. **Create the API Endpoint:**
+   - The route to call the algorithm is defined in `routes/api.php`. It listens for `POST` requests on `/api/array/second-largest` and expects an array in the request body.
+
+4. **Call the Endpoint:**
+   You can test the algorithm by sending a POST request to the following API endpoint:
+   - **Endpoint:** `POST /api/array/second-largest`
+   - **Request Body:**
+     ```json
+     {
+       "array": [10, 5, 30, 20, 50]
+     }
+     ```
+   - **Response:**
+     ```json
+     {
+       "second_largest": 30
+     }
+     ```
 
 ---
 
@@ -219,4 +268,3 @@ npm test
 This project is licensed under the MIT License.
 
 ---
-
